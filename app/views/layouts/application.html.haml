@@ -12,4 +12,8 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       .container
+        - if flash[:error]
+          .alert.alert-danger
+            = flash[:error]
+
         = yield
