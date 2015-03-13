@@ -8,7 +8,8 @@ Feature: Shorten a URL
     And I try to shorten "reddit.com/r/rails"
     Then I should recieve a shortened URL
 
-  # Scenario: Using a shortened URL
-    # Given there is a shortened URL for "reddit.com/r/rails"
-    # When I visit the endpoint for the shortened URL
-    # Then I should be redirected to the shortened url's ultimate destination
+  @selenium
+  Scenario: Using a shortened URL
+    Given there is a shortened URL for "http://reddit.com/r/rails"
+    When I visit the endpoint for the shortened URL
+    Then I should be redirected to the shortened url's ultimate destination

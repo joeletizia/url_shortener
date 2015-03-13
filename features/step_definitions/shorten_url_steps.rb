@@ -15,3 +15,16 @@ Then(/^I should recieve a shortened URL$/) do
   expect(page).to have_content("http://#{HOST}:#{PORT}/#{shortened_url.shortened_url}")
 end
 
+Given(/^there is a shortened URL for "(.*?)"$/) do |url|
+  @shortened_url = ShortenedUrl.create!(original_url: url, shortened_url: "12345")
+  expect(ShortenedUrl.count).to eq(1)
+end
+
+When(/^I visit the endpoint for the shortened URL$/) do
+  visit(redirection_path(id: @shortened_url.shortened_url))
+end
+
+Then(/^I should be redirected to the shortened url's ultimate destination$/) do
+  expect(current_url).to eq("http://www.reddit.com/r/rails")
+end
+
