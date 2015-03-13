@@ -1,5 +1,8 @@
 #shortening_form
-  = simple_form_for shortened_url do |f|
-    = f.input :original_url
-    = f.submit "Shorten!"
+  .col-md-6.col-md-offset-3.col-xs-6
+    %h1.text-center
+      Shorten a Url!
+    = simple_form_for shortened_url do |f|
+      = f.input :original_url
+      = f.submit "Shorten!", class: 'btn btn-primary'
 

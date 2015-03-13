@@ -10,4 +10,12 @@ describe ShortenedUrl do
       expect(shortened_url.shortened_url).not_to be_blank
     end
   end
+
+  describe "validations" do
+    it "original_urls are unique" do
+      original_url = ShortenedUrl.create(original_url: "http://google.com")
+      second_url = ShortenedUrl.new(original_url: "http://google.com")
+      expect(second_url.valid?).to eq(false)
+    end
+  end
 end
