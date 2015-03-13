@@ -30,9 +30,12 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'pry'
 end
 group :test do
   gem 'capybara'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
