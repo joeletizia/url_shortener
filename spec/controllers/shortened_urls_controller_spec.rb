@@ -45,7 +45,7 @@ describe ShortenedUrlsController do
 
         it "renders the form" do
           post :create, url_params
-          expect(controller).to have_received(:render).with(partial: "form", status: :unprocessable_entity)
+          expect(controller).to have_received(:render).with("new", status: :unprocessable_entity)
         end
       end
     end

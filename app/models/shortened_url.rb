@@ -2,6 +2,7 @@ class ShortenedUrl < ActiveRecord::Base
   before_create :generate_shortened_url
 
   validates_uniqueness_of :original_url
+  validates_format_of :original_url, :with => URI::regexp(%w(http https))
 
   private
 

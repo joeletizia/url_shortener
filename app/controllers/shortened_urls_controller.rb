@@ -12,7 +12,7 @@ class ShortenedUrlsController < ApplicationController
     if @shortened_url.update_attributes(shortened_url_params)
       render "show", locals: { shortened_url_presenter: ShortenedUrls::Presenter.new(@shortened_url)}
     else
-      render partial: "form", status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 

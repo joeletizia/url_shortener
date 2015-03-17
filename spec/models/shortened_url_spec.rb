@@ -5,7 +5,7 @@ describe ShortenedUrl do
 
   describe "callbacks" do
     it "assigns the shortened_url attribute before create" do
-      shortened_url.original_url = "hello"
+      shortened_url.original_url = "http://google.com"
       shortened_url.save
       expect(shortened_url.shortened_url).not_to be_blank
     end
@@ -16,6 +16,13 @@ describe ShortenedUrl do
       original_url = ShortenedUrl.create(original_url: "http://google.com")
       second_url = ShortenedUrl.new(original_url: "http://google.com")
       expect(second_url.valid?).to eq(false)
+    end
+
+    it "makes sure that original_urls are urls" do
+      original_url = ShortenedUrl.new(original_url: "google.com")
+      second_url = ShortenedUrl.new(original_url: "http://google.com")
+      expect(second_url.valid?).to eq(true)
+      expect(original_url.valid?).to eq(false)
     end
   end
 end

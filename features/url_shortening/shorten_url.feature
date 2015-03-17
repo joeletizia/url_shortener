@@ -5,7 +5,7 @@ Feature: Shorten a URL
 
   Scenario: Creating a shortened URL
     When I visit the Shorten URL page
-    And I try to shorten "reddit.com/r/rails"
+    And I try to shorten "http://reddit.com/r/rails"
     Then I should recieve a shortened URL
 
   @selenium
