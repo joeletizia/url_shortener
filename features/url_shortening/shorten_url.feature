@@ -1,3 +1,5 @@
+# I'm a very big proponent of Cucumber for BDD. I love that I can take this feature description and share it with my product stakeholders.
+# I've even worked on teams where product owners wrote these with us. It established great Ubiquitous Language (from Eric Evans in DDD)
 Feature: Shorten a URL
   As a user
   I want the ability to shorten a URL

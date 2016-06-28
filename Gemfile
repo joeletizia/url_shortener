@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.2'
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -37,7 +37,6 @@ end
 group :test do
   gem 'capybara'
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
