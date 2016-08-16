@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150313203815) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "shortened_urls", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -23,6 +20,6 @@ ActiveRecord::Schema.define(version: 20150313203815) do
     t.text     "shortened_url", null: false
   end
 
-  add_index "shortened_urls", ["original_url"], name: "index_shortened_urls_on_original_url", using: :btree
+  add_index "shortened_urls", ["original_url"], name: "index_shortened_urls_on_original_url"
 
 end

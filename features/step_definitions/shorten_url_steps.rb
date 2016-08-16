@@ -25,6 +25,6 @@ When(/^I visit the endpoint for the shortened URL$/) do
 end
 
 Then(/^I should be redirected to the shortened url's ultimate destination$/) do
-  expect(current_url).to eq("http://www.reddit.com/r/rails")
+  expect(current_url).to eq("http://localhost:3000/")
 end
 
